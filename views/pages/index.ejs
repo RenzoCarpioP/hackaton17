@@ -1,0 +1,26 @@
+<!-- views/index.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>Github OAuth</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> <!-- load bulma css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <style>
+        body        { padding-top:70px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron text-center text-primary">
+        <h1><span class="fa fa-github"></span> Github OAuth</h1>
+        <p>Authorize your app with:</p>
+        <a href="https://github.com/login/oauth/authorize?client_id=<%= clientg_id %>" class="btn btn-danger"><span class="fa fa-github"></span> Github Login</a>
+    </div>
+    <div class="jumbotron text-center text-primary">
+        <h1><span class="fa fa-linkedin"></span> LinkedIn OAuth</h1>
+        <p>Authorize your app with:</p>
+        <a href="https://www.linkedin.com/oauth/v2/authorization?client_id=<%= clientl_id %>&redirect_uri=https://localhost:8000/linkedin/callback&response_type=code&scope=openid%20profile%20email" class="btn btn-danger"><span class="fa fa-linkedin"></span> LinkedIn Login</a>
+    </div>
+</div>
+</body>
+</html> 
