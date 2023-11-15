@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const https = require('https')
-const fs = require('fs')
-const httpsOptions = {
+//const https = require('https')
+//const fs = require('fs')
+/*const httpsOptions = {
     key: fs.readFileSync('./security/key.pem'),
     cert: fs.readFileSync('./security/cert.pem')
-}
+}*/
 
 app.set('view engine', 'ejs');
 var access_token = "";
@@ -14,8 +14,8 @@ var access_token = "";
 const axios = require('axios')
 // This is the client ID and client secret that you obtained
 // while registering on github app
-const clientgID = '290e150ca2683e8bee37'
-const clientgSecret = '1d73a931e4667afdde29f5b14ce6b34651970e54'
+const clientgID = 'bbf1a0800f1c368a19ce'
+const clientgSecret = '62b508956c711c829f28afc0c4b2fcf9499d0229'
 const clientlID = '778o0oivy0yvbz'
 const clientlSecret = 'J5OdpznLcsML7Hgq'
 
@@ -45,7 +45,7 @@ app.get('/linkedin/callback', (req, res) => {
   
   axios({
     method: 'post',
-    url: `https://www.linkedin.com/oauth/v2/accessToken?client_id=${clientlID}&client_secret=${clientlSecret}&grant_type=authorization_code&code=${requestlToken}&redirect_uri=https://localhost:8000/linkedin/callback`,
+    url: `https://www.linkedin.com/oauth/v2/accessToken?client_id=${clientlID}&client_secret=${clientlSecret}&grant_type=authorization_code&code=${requestlToken}&redirect_uri=http://localhost:8080/linkedin/callback`,
 
     // Set the content type header, so that we get the response in JSON
     headers: {
@@ -88,8 +88,13 @@ app.get('/', function(req, res) {
 });
 
 
-const port = 8080;
+/*const port = 8080;
 const server = https.createServer(httpsOptions, app)
     .listen(port, () => {
         console.log('server running at ' + port)
-    })
+    })*/
+
+// Listen 
+app.listen(8080, () => {
+  console.log("Server started at port 8080");
+}); 
