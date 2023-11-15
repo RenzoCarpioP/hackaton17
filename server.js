@@ -101,3 +101,5 @@ const server = https.createServer(httpsOptions, app)
 app.listen(8080, () => {
   console.log("Server started at port 8080");
 }); 
+
+module.exports = app;
