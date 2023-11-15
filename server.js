@@ -45,7 +45,7 @@ app.get('/linkedin/callback', (req, res) => {
   
   axios({
     method: 'post',
-    url: `https://www.linkedin.com/oauth/v2/accessToken?client_id=${clientlID}&client_secret=${clientlSecret}&grant_type=authorization_code&code=${requestlToken}&redirect_uri=http://localhost:8080/linkedin/callback`,
+    url: `https://www.linkedin.com/oauth/v2/accessToken?client_id=${clientlID}&client_secret=${clientlSecret}&grant_type=authorization_code&code=${requestlToken}&redirect_uri=https://hackaton17webazure.azurewebsites.net/linkedin/callback`,
 
     // Set the content type header, so that we get the response in JSON
     headers: {
