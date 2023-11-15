@@ -8,6 +8,9 @@ const app = express();
 }*/
 
 app.set('view engine', 'ejs');
+app.set("views", __dirname + "/views");
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + "public"));
 var access_token = "";
 
 // Import the axios library, to make HTTP requests
