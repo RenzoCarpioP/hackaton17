@@ -88,7 +88,7 @@ app.get('/', function(req, res) {
 });
 
 
-const port = process.env.PORT || 8081;
+const port = 8080;
 const server = https.createServer(httpsOptions, app)
     .listen(port, () => {
         console.log('server running at ' + port)
